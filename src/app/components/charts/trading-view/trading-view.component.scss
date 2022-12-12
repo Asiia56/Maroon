@@ -1,0 +1,236 @@
+.card {
+  background: #ffffff;
+  padding: 40px 15px 77px;
+}
+
+.card__wrapper {
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+.card__image {
+  background: #d1c7bd;
+}
+
+.card__content {
+  padding-top: 41px;
+  display: grid;
+
+}
+
+.card__content-title {
+  font: normal 500 32px/125% "Raleway", "Arial", sans-serif;
+  margin: 0;
+  color: #122947;
+}
+
+.card__text p {
+  font: normal normal 16px/145% "Mplus", "Arial", sans-serif;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #122947;
+}
+
+.card__accordion {
+  position: relative;
+}
+
+.card__accordion-head {
+  position: relative;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.card__accordion-head:hover {
+  cursor: pointer;
+}
+
+.card__accordion-toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.3s opacity;
+}
+
+.card__accordion-toggler:hover {
+  opacity: 0.5;
+}
+
+.card__accordion-toggler:active {
+  opacity: 1;
+}
+
+.card__accordion-title {
+  font: normal 500 18px/145% "Mplus", "Arial", sans-serif;
+  margin: 0;
+  color: #122947;
+}
+
+.card__accordion-text {
+  font: normal normal 14px/145% "Mplus", "Arial", sans-serif;
+  width: 100%;
+  margin: 0;
+  color: #122947;
+}
+
+@media (min-width: 1199px) {
+  .card {
+    padding: 40px 45px 18px;
+  }
+
+  .card__wrapper {
+    display: block;
+  }
+
+  .card__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card__content {
+    padding-top: 53px;
+  }
+
+  .card__text {
+    width: auto;
+  }
+
+  .card__accordion-button {
+    right: 20px;
+  }
+
+  .card__accordion-button-off {
+    right: 20px;
+  }
+
+  .card__radio::before {
+    width: 16px;
+    height: 16px;
+  }
+
+  .card__input-radio:checked+.card__radio::after {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (min-width: 767px) {
+  .card {
+    padding: 40px 15px 35px;
+  }
+
+  .card__content {
+    padding-top: 43px;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card__content-title {
+    font-size: 28px;
+    line-height: 130%;
+  }
+
+  .card__accordion-title {
+    font-size: 16px;
+  }
+
+  .card__accordion-button-off {
+    right: 10px;
+  }
+
+  .card__radio {
+    font-size: 16px;
+  }
+
+  .card__price span {
+    margin-right: 35px;
+    font-size: 22px;
+  }
+
+  .card__button {
+    padding: 9px 27px 12px;
+    font-size: 14px;
+  }
+}
+
+.accordion__toggler {
+  display: none;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: 0 0;
+  outline: 0;
+}
+
+.accordion_inited .accordion__toggler {
+  display: flex;
+}
+
+.accordion__toggler-icon {
+  position: relative;
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.accordion__toggler-icon::after,
+.accordion__toggler-icon::before {
+  background: #122947;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 12px;
+  height: 2px;
+  margin-top: -1px;
+  margin-left: -6px;
+  content: "";
+}
+
+.accordion__toggler-icon::after {
+  transform: rotate(90deg) scaleY(0);
+  transition: 0.15s transform;
+}
+
+.accordion_closed .accordion__toggler-icon::after {
+  transform: rotate(90deg) scaleY(1);
+}
+
+.accordion__content {
+  overflow: hidden;
+  box-sizing: border-box;
+  transition-property: height;
+  transition-duration: 0.15s;
+}
+
+.accordion_closed .accordion__content {
+  height: 0 !important;
+}
+
+.accordion__inner {
+  transition: 0.15s opacity;
+}
+
+.accordion_closed .accordion__inner {
+  opacity: 0;
+}
+
+.accordion_opened .accordion__inner {
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+canvas {
+  width: 100% !important;
+}
+

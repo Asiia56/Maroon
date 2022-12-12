@@ -1,0 +1,40 @@
+<section class="card">
+  <div class="card__wrapper">
+    <div class="card__image-wrapper">
+      <div id="apexChart" *ngIf="fileOnLoad" class="wrapper">
+        <apx-chart
+        [chart]="chartOptions.chart"
+        [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
+        [title]="chartOptions.title"
+        [series]="chartOptions.series"></apx-chart>
+     </div>
+
+    </div>
+    <div class="card__content">
+
+      <div class="card__text">
+        <h1 class="card__content-title">ApexCharts</h1>
+        <p>It is an open-source project licensed under MIT and is free to use in commercial applications.</p>
+        <p>ApexCharts includes over a dozen chart types </p>
+      </div>
+
+      <div class="card__accordion accordion">
+        <div class="card__accordion-head">
+          <h2 class="card__accordion-title">Candlestick Charts</h2>
+          <button class="card__accordion-toggler accordion__toggler" type="button" aria-label="Open"><span
+              class="accordion__toggler-icon"></span></button>
+        </div>
+        <div class="card__accordion-content accordion__content">
+          <ul class="card__accordion-text accordion__inner">
+            <li>Candlestick charts are used by traders to determine possible price movement based on past patterns.</li>
+            <li>Candlesticks are useful when trading as they show four price points (open, close, high, and low)
+              throughout the period of time the trader specifies.</li>
+            <li>Trading is often dictated by emotion, which can be read in candlestick charts.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

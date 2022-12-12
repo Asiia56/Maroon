@@ -1,0 +1,56 @@
+<section class="card">
+  <div class="card__wrapper">
+    <div class="chart-container">
+
+
+      <input (change)="loadData($any($event))" (keyup)="onKeyup($any($event))" class="form-control" type="text"
+        placeholder="Search..." list="searchResultsBar" autofocus />
+      <datalist id="searchResultsBar">
+        <option *ngFor="let i of searchResultsBar" value="{{i.symbol | uppercase}}">{{i.name | titlecase}}</option>
+      </datalist>
+      <br />
+
+      <div class="form-group row" id="timeframe">
+        <label class="col-sm-6 col-form-label" for="timeframe">Timeframe:</label>
+        <div class="col-sm-6">
+          <select (change)="onTimeChange($event.target['value'])" class="form-control form-control-sm" name="timeframe">
+            <option id="{{timeframes[timeframe.id].id}}" value="{{timeframes[timeframe.id].timeframe}}"
+              selected="{{timeframes[timeframe.id].selected}}" *ngFor="let timeframe of timeframes">
+              {{timeframes[timeframe.id].label}}</option>
+          </select>
+        </div>
+      </div>
+
+
+      <canvas id="barSearchChart">{{chart}}</canvas>
+
+    </div>
+
+    <div class="card__content">
+
+      <div class="card__text">
+        <h1 class="card__content-title">Alpha Vantage</h1>
+        <p>Major provider of historical and real-time stock APIs along with cryptocurrency, Forex, ETF, mutual funds
+          data feeds</p>
+        <p>Each free API key allows up to 500 API calls per day by default. </p>
+      </div>
+
+      <div class="card__accordion accordion">
+        <div class="card__accordion-head">
+          <h2 class="card__accordion-title">How to use</h2>
+          <button class="card__accordion-toggler accordion__toggler" type="button" aria-label="Open"><span
+              class="accordion__toggler-icon"></span></button>
+        </div>
+        <div class="card__accordion-content accordion__content">
+          <p class="card__accordion-text accordion__inner">
+            API calls are made using any web-enabled client (e.g. a web browser) to make an HTTP GET request to an
+            appropriate URL. API users can use the programming language of their choice
+            Alpha Vantage is backed by Y Combinator, focuses on data access democratizing, and is product-oriented and a
+            technology-driven company
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

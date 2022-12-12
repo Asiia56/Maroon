@@ -1,1 +1,143 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+  font-family: "Mplus";
+  src: local("Mplus 1p"), local("Mplus1p-Regular"), url("assets/fonts/m-plus-1p.woff2") format("woff2"), url("./assets/fonts/m-plus-1p.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mplus";
+  src: local("Mplus 1p Medium"), local("Mplus1p-Medium"), url("./assets/fonts/m-plus-1p-500.woff2") format("woff2"), url("./assets/fonts/m-plus-1p-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/raleway.woff2") format("woff2"), url("./assets/fonts/raleway.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/raleway-500.woff2") format("woff2"), url("./assets/fonts/raleway-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Raleway", "Arial", sans-serif;
+  color: #122947;
+}
+
+body {
+  margin: 0;
+}
+
+@media (max-width: 1199px) {
+  body.no-scroll {
+    overflow: hidden;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+picture {
+  display: flex;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1200px;
+}
+
+@media (max-width: 1199px) {
+  .wrapper {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.button {
+  font: 500 16px/1 "Mplus", "Arial", sans-serif;
+  display: block;
+  padding: 12px 27px;
+  color: #122947;
+  background: 0 0;
+  border: 1px solid #b3bac1;
+  border-radius: 2px;
+  appearance: none;
+  cursor: pointer;
+  transition: 0.2s;
+  outline: 0;
+}
+
+.button:active,
+.button:focus,
+.button:hover {
+  background: #ffffff;
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+  .button {
+    padding: 13px 27px;
+    font-size: 14px;
+  }
+}

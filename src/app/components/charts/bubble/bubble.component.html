@@ -1,0 +1,48 @@
+<section class="card">
+  <div class="card__wrapper">
+    <div class="chart-container">
+      <!--
+        <input (change)="getData()" (keyup)="onKeyup($any($event))" class="form-control" type="text"
+        placeholder="Search..." list="searchresults" autofocus />
+      <datalist id="searchresults">
+        <option *ngFor="let i of searchResults" value="{{i.symbol | uppercase}}">{{i.name | titlecase}}</option>
+      </datalist>
+      <br />
+
+        <div class="form-group row" id="timeframe">
+        <label class="col-sm-6 col-form-label" for="timeframe">Timeframe:</label>
+        <div class="col-sm-6">
+          <select (change)="onTimeChange($event.target['value'])" class="form-control form-control-sm" name="timeframe">
+            <option id="{{timeframes[timeframe.id].id}}" value="{{timeframes[timeframe.id].timeframe}}" selected="{{timeframes[timeframe.id].selected}}" *ngFor="let timeframe of timeframes">{{timeframes[timeframe.id].label}}</option>
+          </select>
+        </div>
+      </div>
+      -->
+      <canvas id="bubbleChart">{{chart}}</canvas>
+    </div>
+    <div class="card__content">
+
+      <div class="card__text">
+        <h1 class="card__content-title">Volume chart</h1>
+        <p>Volume is the amount of an asset or security that changes hands over some period of time, often over the course of a day. For instance, stock trading volume would refer to the number of shares of a security traded between its daily open and close. Trading volume, and changes to volume over the course of time, are important inputs for technical traders.
+        </p>
+        <p> </p>
+      </div>
+
+      <div class="card__accordion accordion">
+        <div class="card__accordion-head">
+          <h2 class="card__accordion-title">Key takeaways</h2>
+          <button class="card__accordion-toggler accordion__toggler" type="button" aria-label="Open"><span
+              class="accordion__toggler-icon"></span></button>
+        </div>
+        <div class="card__accordion-content accordion__content">
+          <p class="card__accordion-text accordion__inner">Volume is the number of shares of a security traded during a given period of time. </p>
+          <p class="card__accordion-text accordion__inner">Generally securities with more daily volume are more liquid than those without, since they are more "active". </p>
+          <p class="card__accordion-text accordion__inner">Volume is an important indicator in technical analysis because it is used to measure the relative significance of a market move.</p>
+          <p class="card__accordion-text accordion__inner">The higher the volume during a price move, the more significant the move and the lower the volume during a price move, the less significant the move</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

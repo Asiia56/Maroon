@@ -1,0 +1,214 @@
+.catalog {
+  padding-bottom: 60px;
+  background: #f8f8f6;
+}
+
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  padding-top: 26px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.catalog__item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  width: 270px;
+}
+
+.catalog__item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.product__wrapper {
+  position: absolute;
+  padding: 20px;
+  padding-bottom: 17px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.product__image {
+  width: 100%;
+ // height: 90%;
+  margin: 3em auto;
+}
+
+.product__link {
+  background: #d1c7bd;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  outline: 0;
+  transition: 0.2s;
+}
+
+.product__link:focus,
+.product__link:hover {
+  opacity: 0.5;
+}
+
+.product__link:active {
+  opacity: 1;
+}
+
+.product__title {
+  font: normal 500 16px/110% "Raleway", "Arial", sans-serif;
+  margin: 0;
+  color: #2e3842;
+}
+
+.product__text {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1199px) {
+  .catalog__item {
+    width: calc(50% - 15px);
+  }
+
+  .catalog__item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog__title {
+    padding: 32px 0 15px;
+  }
+
+  .catalog__title h1 {
+    font-size: 28px;
+  }
+
+  .catalog__list {
+    display: block;
+  }
+
+  .catalog__item {
+    width: 100%;
+  }
+
+  .catalog__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .product__link {
+    min-height: 290px;
+  }
+}
+
+.catalog-head {
+  position: relative;
+}
+
+.catalog-head__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.catalog-head__title {
+  font: normal 500 36px/145% "Raleway", "Arial", sans-serif;
+  margin: 0;
+  color: #122947;
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+}
+}
+
+.catalog-history {
+  padding: 55px 15px 123px;
+}
+
+.catalog-history__wrapper {
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+.catalog-history h2 {
+  font: normal 500 32px/125% "Raleway", "Arial", sans-serif;
+  margin: 0;
+  margin-bottom: 50px;
+  color: #122947;
+  text-align: center;
+}
+
+.catalog-history__list {
+  margin: 0;
+  padding: 0;
+  padding-top: 26px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.catalog-history__item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  width: 270px;
+}
+
+.catalog-history__item:nth-child(4n) {
+  margin-right: 0;
+}
+
+@media (max-width: 1199px) {
+  .catalog-history {
+    padding: 95px 45px 103px;
+  }
+
+  .catalog-history h2 {
+    margin-bottom: 51px;
+  }
+
+  .catalog-history__item {
+    width: calc(50% - 15px);
+  }
+
+  .catalog-history__item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog-history {
+    padding: 38px 15px 38px;
+  }
+
+  .catalog-history h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .catalog-history__list {
+    display: block;
+  }
+
+  .catalog-item-history:nth-child(2) {
+    margin-bottom: 0;
+  }
+
+  .catalog-item-history:not(:nth-child(2)) {
+    display: none;
+  }
+
+  .catalog-history__item {
+    width: 100%;
+  }
+
+  .catalog-history__item:last-child {
+    margin-bottom: 0;
+  }
+}

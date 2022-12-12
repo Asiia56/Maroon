@@ -1,0 +1,35 @@
+<section class="card">
+  <div class="card__wrapper">
+    <div class="chart-container">
+      <canvas id="ohlcChart">{{chart}}</canvas>
+    </div>
+    <app-ohlc2></app-ohlc2>
+
+    <div class="card__content">
+
+      <div class="card__text">
+        <h1 class="card__content-title">OHLC </h1>
+        <p>An open-high-low-close chart is a type of chart typically used to illustrate movements in the price of a
+          financial instrument over time.</p>
+      </div>
+
+      <div class="card__accordion accordion">
+        <div class="card__accordion-head">
+          <h2 class="card__accordion-title">Key takeaways</h2>
+          <button class="card__accordion-toggler accordion__toggler" type="button" aria-label="Open"><span
+              class="accordion__toggler-icon"></span></button>
+        </div>
+        <div class="card__accordion-content accordion__content">
+          <ul class="card__accordion-text accordion__inner">
+            <li>It can be applied to any timeframe.</li>
+            <li>The vertical line represents the high and low for the period, while the line to the left marks the open
+              price and the line to the right marks the closing price. This entire structure is called a bar</li>
+            <li>When the close is above the open, the bar is often colored black. When the close is below the open the
+              bar is often colored red.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<section class="catalog">
+  <div class="catalog-head">
+    <div class="catalog-head__wrapper wrapper">
+      <h1 class="catalog-head__title">Catalog</h1>
+    </div>
+  </div>
+  <div class="wrapper">
+    <ul class="catalog__list">
+      <li class="catalog__item product" *ngFor="let item of items">
+        <a class="product__link" [routerLink]="item.link">
+          <img class="product__image" [src]="item.source" [alt]="item.name">
+          <div class="product__wrapper">
+            <div class="product__text">
+              <h3 class="product__title">{{item.name}}</h3>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <div class="pagination">
+    </div>
+  </div>
+</section>
+<section class="catalog-history">
+  <div class="catalog-history__wrapper">
+    <h2>Recently viewed</h2>
+    <ul class="catalog-history__list">
+      <li class="catalog-history__item product" *ngFor="let item of items | slice:0:4">
+        <a class="product__link" [routerLink]="item.link">
+          <img class="product__image" [src]="item.source" [alt]="item.name">
+          <div class="product__wrapper">
+            <div class="product__text">
+              <h3 class="product__title">{{item.name}}</h3>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</section>
