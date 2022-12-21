@@ -7,42 +7,56 @@ import { AlphaApiService } from 'src/app/services/alpha-api.service';
 import { DataTesco } from 'src/app/services/data.model';
 
 @Component({
-  selector: 'app-apex-bar',
-  templateUrl: './apex-bar.component.html',
-  styleUrls: ['./apex-bar.component.scss', '../../trading-view/trading-view.component.scss']
+  selector: 'app-type-change',
+  templateUrl: './type-change.component.html',
+  styleUrls: ['./type-change.component.scss']
 })
-export class ApexBarComponent implements OnInit {
+export class TypeChangeComponent implements OnInit {
 
-  @ViewChild("areaChart") chart: ChartComponent; //reference to chart in html
+  @ViewChild("changeTypeChart") chart: ChartComponent; //reference to chart in html
+  constructor(public service: AlphaApiService) { }
   public chartOptions: Partial<ChartOptions>;
 
-  fileOnLoad: boolean = false;
+  ngOnInit(): void {
+    this.getData()
+  }
 
+  fileOnLoad: boolean = false;
   data$: Observable<DataTesco[]>;
   data: DataTesco[] = [];
   dateLabels$ = [];
   chartType = 'line' as ChartType;
   showLabels: boolean = true;
 
-  constructor(private service: AlphaApiService) {
-  }
-
-  ngOnInit(): void {
-    this.getData();
-  }
-
   getData() {
     this.data$ = this.service.dailyTest();
     this.data$.subscribe(data => {
-      this.data = Object.keys(data["Time Series (Daily)"]).map(e => data["Time Series (Daily)"][e]);
+      this.data = Object.keys(data["Time Series (Daily)"]).map(el => data["Time Series (Daily)"][el]);
       this.dateLabels$ = Object.keys(data["Time Series (Daily)"]);
-
       this.createChart();
+
     });
   }
 
+  changeChart() {
+    if (this.chartType == 'line') {
+      this.chartType = 'bar'
+    } else if (this.chartType == 'bar') {
+      this.chartType = 'radar'
+      this.showLabels = false;
+    } else if (this.chartType == "radar") {
+      this.chartType = "area";
+      this.showLabels = true;
+    } else if (this.chartType == "area") {
+      this.chartType = "line";
+    }
+    this.createChart();
+  }
+
   createChart() {
+
     this.fileOnLoad = true;
+
     this.chartOptions = {
       series: [
         {
@@ -56,7 +70,6 @@ export class ApexBarComponent implements OnInit {
       ],
       chart: {
         type: this.chartType,
-        id: 'areaChart',
         height: 550,
         zoom: {
           enabled: true
@@ -69,7 +82,7 @@ export class ApexBarComponent implements OnInit {
         curve: "straight"
       },
       title: {
-        text: "Area Chart",
+        text: "Comparison of open and close price",
         align: "left"
       },
       labels: this.dateLabels$,
@@ -98,7 +111,4 @@ export class ApexBarComponent implements OnInit {
       }
     };
   }
-
-
-
 }

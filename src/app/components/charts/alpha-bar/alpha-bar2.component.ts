@@ -11,17 +11,19 @@ import { AlphaApiService } from 'src/app/services/alpha-api.service';
 export class AlphaBar2Component implements OnInit {
 
   //public chart: any;
-  date$ = [];
+  date = [];
   lineData$ = [];
   barData$ = [];
-  dailyData = [];
+  //ailyData = [];
   lineCount: number;
   searchResultsAlpha = [];
   keyword: string = '';
   barChartType: ChartType = 'line';
 
   constructor(public service: AlphaApiService) { }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log('ngOnInit, lineData ', this.lineData$, 'and barData', this.barData$)
+  }
 
   public chartOptions: ChartOptions = {
     responsive: true,
@@ -34,12 +36,13 @@ export class AlphaBar2Component implements OnInit {
     }
   };
 
-  public chartLabels = this.date$;
+  public chartLabels = this.date;
   public chartLegend = true;
   public chartData: ChartDataset[] = [{ data: this.lineData$, label: 'High', type: 'line' },
   { data: this.barData$, label: 'Low', type: 'line' }];
 
   onKeyup(key: Array<any>) {
+    console.log('onKeyup triggered')
     this.keyword += key["key"];
     this.service.search(this.keyword).subscribe(data => {
       let searchdata: [] = data["bestMatches"];
@@ -55,11 +58,13 @@ export class AlphaBar2Component implements OnInit {
   onChange(event: Array<any>) {
     let line = [];
     let bar = [];
+    console.log('onChange triggered')
 
     this.service.daily(event['srcElement']['value']).subscribe(data => {
-      this.date$ = Object.keys(data["Time Series (Daily)"]);
-      this.chartLabels = this.date$.reverse();
-      let dailyData = Object.keys(data["Time Series (Daily)"]).map(e => data["Time Series (Daily)"][e]);
+      this.date = Object.keys(data["Time Series (Daily)"]);
+      this.chartLabels = this.date.reverse();
+      let dailyData = Object.keys(data["Time Series (Daily)"])
+      .map(e => data["Time Series (Daily)"][e]);
       dailyData.forEach(function (day) {
         line.unshift(day["2. high"]);
         bar.unshift(day["3. low"]);
@@ -69,23 +74,32 @@ export class AlphaBar2Component implements OnInit {
       this.lineData$ = line;
       this.barData$ = bar;
       this.lineCount = line.length - 1;
+      console.log('onChange, lineData ', this.lineData$, 'and barData', this.barData$)
+      console.log('onChange, this.chartData[0].data ', this.chartData[0].data, 'and barData', this.chartData[1].data)
+
       this.timeframes[7] = { id: 7, timeframe: this.lineCount, label: 'Max', selected: true };
     });
+
   }
 
   onTimeChange(timeframe: number) {
     let dates = [];
     let line = [];
     let bar = [];
+    console.log('onTimeChange triggered')
 
     for (let i = 0; i <= timeframe; i++) {
-      dates.unshift(this.date$[this.lineCount - i]);
+      dates.unshift(this.date[this.lineCount - i]);
       line.unshift(this.lineData$[this.lineCount - i]);
       bar.unshift(this.barData$[this.lineCount - i]);
     }
     this.chartLabels = dates;
     this.chartData[0].data = line;
     this.chartData[1].data = bar;
+    console.log('onTimeChange, this.chartData[0].data ', this.chartData[0].data, 'and barData', this.chartData[1].data)
+
+    console.log('onTimeChange, lineData ', this.lineData$, 'and barData', this.barData$)
+
   }
 
 timeframes = [

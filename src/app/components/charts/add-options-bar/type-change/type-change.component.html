@@ -1,0 +1,8 @@
+
+<!--button to change type of chart-->
+<input type="button" class="btn-change" value="Change Chart" (click)="changeChart()" />
+<div *ngIf="fileOnLoad">
+    <apx-chart #changeTypeChart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+        [stroke]="chartOptions.stroke" [dataLabels]="chartOptions.dataLabels" [yaxis]="chartOptions.yaxis"
+        [labels]="chartOptions.labels" [title]="chartOptions.title"></apx-chart>
+</div>

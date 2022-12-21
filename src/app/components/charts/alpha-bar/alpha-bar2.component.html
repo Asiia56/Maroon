@@ -8,17 +8,19 @@
       </datalist>
       <br />
 
-        <div class="form-group row" id="timeframe">
+      <div class="form-group row" id="timeframe">
         <label class="col-sm-6 col-form-label" for="timeframe">Timeframe:</label>
         <div class="col-sm-6">
           <select (change)="onTimeChange($event.target['value'])" class="form-control form-control-sm" name="timeframe">
-            <option id="{{timeframes[timeframe.id].id}}" value="{{timeframes[timeframe.id].timeframe}}" selected="{{timeframes[timeframe.id].selected}}" *ngFor="let timeframe of timeframes">{{timeframes[timeframe.id].label}}</option>
+            <option id="{{timeframes[timeframe.id].id}}" value="{{timeframes[timeframe.id].timeframe}}"
+              selected="{{timeframes[timeframe.id].selected}}" *ngFor="let timeframe of timeframes">
+              {{timeframes[timeframe.id].label}}</option>
           </select>
         </div>
       </div>
       <!--<canvas id="BarChart"> {{chart}}</canvas>-->
-      <canvas id="alphaBarChart" baseChart [type]="barChartType" [datasets]="chartData" [options]="chartOptions" [legend]="chartLegend"
-        [labels]="chartLabels">
+      <canvas id="alphaBarChart" baseChart [type]="barChartType" [datasets]="chartData" [options]="chartOptions"
+        [legend]="chartLegend" [labels]="chartLabels">
       </canvas>
     </div>
     <div class="card__content">

@@ -19,9 +19,9 @@ export class OhlcComponent implements OnInit {
   constructor(private service: AlphaApiService) { }
 
   ngOnInit(): void {
-    this.getData();
+//    this.getData();
   }
-
+/*
   getData() {
     this.data$ = this.service.dailyTest(); //refer to api and receive all info as observable
     this.data$.subscribe(data => { //as i cannot manipulate observables directly, i subscribe
@@ -87,5 +87,5 @@ export class OhlcComponent implements OnInit {
     })
     // this.chart.canvas.parentNode.style.height = '540px';
   }
-
+*/
 }

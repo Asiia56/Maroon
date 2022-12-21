@@ -1,0 +1,12 @@
+<!-- button to choose company-->
+<input (change)="getData($any($event))" (keyup)="onKeyup($any($event))" class="form-control" type="text"
+  placeholder="Search..." list="searchResults" autofocus />
+<datalist id="searchResults">
+  <option *ngFor="let i of searchResults" value="{{i.symbol | uppercase}}">{{i.name | titlecase}}</option>
+</datalist>
+<br />
+<div ><!--*ngIf="fileOnLoad"-->
+  <apx-chart #changeCompanyChart [series]="chartOptions.series" [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis" [stroke]="chartOptions.stroke" [dataLabels]="chartOptions.dataLabels"
+    [yaxis]="chartOptions.yaxis" [labels]="chartOptions.labels" [title]="chartOptions.title"></apx-chart>
+</div>

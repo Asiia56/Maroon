@@ -1,6 +1,5 @@
 import { Component, ViewChild, OnInit } from "@angular/core";
 import { Observable } from 'rxjs';
-
 import { ChartComponent, ApexAxisChartSeries, ApexChart, ApexYAxis, ApexXAxis, ApexTitleSubtitle } from "ng-apexcharts";
 import { parseISO } from 'date-fns';
 import { DataTesco } from "src/app/services/data.model";
@@ -14,34 +13,34 @@ export type ChartOptions = {
   title: ApexTitleSubtitle;
 };
 @Component({
-  selector: 'app-apex-candlestick',
-  templateUrl: './apex-candlestick.component.html',
-  styleUrls: ['./apex-candlestick.component.scss', '../trading-view/trading-view.component.scss']
+  selector: 'app-apex-candlestick-was',
+  templateUrl: './apex-candlestick-was.component.html',
+  styleUrls: ['./apex-candlestick-was.component.scss']
 })
+export class ApexCandlestickWasComponent implements OnInit {
 
-export class ApexCandlestickComponent implements OnInit {
-
-  @ViewChild("chart", { static: false }) chart: ChartComponent;
+  @ViewChild("apexChartWas", { static: false }) chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
-  fileOnLoad:boolean = false;
+  fileOnLoad: boolean = false;
 
   ngOnInit(): void {
-    this.getData();
+    this.getData(undefined);
   }
 
+  public activeOptionButton = "all";
   data$: Observable<DataTesco[]>;
   series = [];
 
-  getData() {
+  getData(option) {
     let open = [];
     let close = [];
     let high = [];
     let low = [];
     let arrFinal = [];
 
-    this.data$ = this.service.dailyTest();
-    this.data$.subscribe(data => {
-      let dataS = Object.keys(data["Time Series (Daily)"]).map(e => data["Time Series (Daily)"][e]);;
+    this.service.dailyAll().subscribe(data => {
+      console.log('subscription created')
+      let dataS = Object.keys(data["Time Series (Daily)"]).map(e => data["Time Series (Daily)"][e]);
       let dateLabels$ = Object.keys(data["Time Series (Daily)"]).map(e => parseISO(e))
       dataS.forEach(function (day) {
         high.unshift(day["2. high"]);
@@ -51,15 +50,27 @@ export class ApexCandlestickComponent implements OnInit {
       })
 
       let arrCollection = [open, high, low, close];
+      let lineLength = dateLabels$.length - 1;
+      let optionLength = 21;
 
-      for (let i = 0; i < open.length; i++) {
+      if (option === '1m') {
+        optionLength = 21;
+      } else if (option === '6m') {
+        optionLength = 126;
+      } else if (option === '1y') {
+        optionLength = 252;
+      } else if (option === 'all' || option === undefined) {
+        optionLength = lineLength;
+      }
+
+      for (let i = 0; i < optionLength; i++) {
         var arr = [];
         arrCollection.forEach(function (a) {
           arr.push(a[i]);
         });
         arrFinal.push(arr);
       }
-
+      this.series = [];
       for (let x = 0; x < arrFinal.length; x++) {
         this.series.push({
           x: dateLabels$[x],
@@ -70,7 +81,7 @@ export class ApexCandlestickComponent implements OnInit {
     });
   }
 
-  constructor(private service: AlphaApiService) {}
+  constructor(private service: AlphaApiService) { }
 
   createChart() {
     this.fileOnLoad = true; //is needed to prevent html load earsiler than ts receive data from api
@@ -97,4 +108,11 @@ export class ApexCandlestickComponent implements OnInit {
       }
     };
   }
+
+  updateOptions(option: any): void {
+    this.activeOptionButton = option;
+    this.getData(option);
+  }
 }
+
+

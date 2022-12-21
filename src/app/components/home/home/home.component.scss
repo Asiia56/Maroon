@@ -16,7 +16,7 @@
 }
 
 .about {
-  background: url("../../../assets/about/main@1x.jpg") no-repeat 0 0/cover #ffffff;
+  background: url("../../../../assets/about/main@1x.jpg") no-repeat 0 0/cover #ffffff;
   padding: 131px 0 64px;
 }
 
@@ -24,14 +24,14 @@
   (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .about {
-    background-image: url("../../../assets/about/main@2x.jpg");
+    background-image: url("../../../../assets/about/main@2x.jpg");
   }
 }
 
 @media (max-width: 1199px) {
   .about {
     padding-bottom: 66px;
-    background-image: url("../../../assets/about/main-lap@1x.jpg");
+    background-image: url("../../../../assets/about/main-lap@1x.jpg");
   }
 }
 
@@ -39,14 +39,14 @@
   (max-width: 1199px) and (min-resolution: 144dpi),
   (max-width: 1199px) and (min-resolution: 1.5dppx) {
   .about {
-    background-image: url("../../../assets/about/main-lap@2x.jpg");
+    background-image: url("../../../../assets/about/main-lap@2x.jpg");
   }
 }
 
 @media (max-width: 767px) {
   .about {
     padding: 97px 0 55px;
-    background-image: url("../../../assets/about/main-mob@1x.jpg");//"../../../assets/about/main-mob@1x.jpg"
+    background-image: url("../../../../assets/about/main-mob@1x.jpg");
   }
 }
 
@@ -54,7 +54,7 @@
   (max-width: 767px) and (min-resolution: 144dpi),
   (max-width: 767px) and (min-resolution: 1.5dppx) {
   .about {
-    background-image: url("../../../assets/about/main-mob@2x.jpg");
+    background-image: url("../../../../assets/about/main-mob@2x.jpg");
   }
 }
 
@@ -294,7 +294,7 @@
 }
 
 .banner {
-  background: url("../../../assets/spring/spring@1x.jpg") no-repeat 0 0/cover #f1efeb;
+  background: url("../../../../assets/spring/spring@1x.jpg") no-repeat 0 0/cover #f1efeb;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -305,7 +305,7 @@
   (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .banner {
-    background-image: url("../../../assets/spring/spring@2x.jpg");
+    background-image: url("../../../../assets/spring/spring@2x.jpg");
   }
 }
 
@@ -313,7 +313,7 @@
   .banner {
     min-height: 432px;
     background-position: left center;
-    background-image: url("../../../assets/spring/spring-lap@1x.jpg");
+    background-image: url("../../../../assets/spring/spring-lap@1x.jpg");
   }
 }
 
@@ -321,7 +321,7 @@
   (max-width: 1199px) and (min-resolution: 144dpi),
   (max-width: 1199px) and (min-resolution: 1.5dppx) {
   .banner {
-    background-image: url("../../../assets/spring/spring-lap@2x.jpg");
+    background-image: url("../../../../assets/spring/spring-lap@2x.jpg");
   }
 }
 
@@ -330,7 +330,7 @@
     flex-direction: column;
     min-height: 562px;
     background-position: center;
-    background-image: url("../../../assets/spring/spring-mob@1x.jpg");
+    background-image: url("../../../../assets/spring/spring-mob@1x.jpg");
   }
 }
 
@@ -338,7 +338,7 @@
 (max-width: 767px) and (min-resolution: 144dpi),
 (max-width: 767px) and (min-resolution: 1.5dppx) {
   .banner {
-    background-image: url("../../../assets/spring/spring-mob@2x.jpg");
+    background-image: url("../../../../assets/spring/spring-mob@2x.jpg");
   }
 }
 
@@ -606,7 +606,7 @@
 }
 
 .map {
-  background: url("../../../assets/map/map.PNG") no-repeat 0 0/cover #ffffff; //assets/maps/map@1x.jpg
+  background: url("../../../../assets/map/map.PNG") no-repeat 0 0/cover #ffffff; //assets/maps/map@1x.jpg
   height: 422px;
 }
 
@@ -614,14 +614,14 @@
   (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .map {
-    background-image: url("../../../assets/map/map.PNG");
+    background-image: url("../../../../assets/map/map.PNG");
   }
 }
 
 @media (max-width: 1199px) {
   .map {
     height: 374px;
-    background-image: url("../../../assets/map/map.PNG");
+    background-image: url("../../../../assets/map/map.PNG");
   }
 }
 
@@ -629,14 +629,14 @@
   (max-width: 1199px) and (min-resolution: 144dpi),
   (max-width: 1199px) and (min-resolution: 1.5dppx) {
   .map {
-    background-image: url("../../../assets/map/map.PNG");
+    background-image: url("../../../../assets/map/map.PNG");
   }
 }
 
 @media (max-width: 767px) {
   .map {
     height: 281px;
-    background-image: url("../../../assets/map/map.PNG");
+    background-image: url("../../../../assets/map/map.PNG");
   }
 }
 
@@ -644,6 +644,6 @@
   (max-width: 767px) and (min-resolution: 144dpi),
   (max-width: 767px) and (min-resolution: 1.5dppx) {
   .map {
-    background-image: url("../../../assets/map/map.PNG");
+    background-image: url("../../../../assets/map/map.PNG");
   }
 }

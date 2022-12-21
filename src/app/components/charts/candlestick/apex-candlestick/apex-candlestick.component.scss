@@ -1,7 +1,12 @@
+.card__accordion-text {
+  list-style: none;
+  list-style-type: disclosure-closed;
+}
+
 .apex-wrapper {
   width: 100%
 }
-.btn-change {
+button {
   background: #fff;
   color: #222;
   border: 1px solid #e7e7e7;
@@ -20,3 +25,4 @@ button.active {
 button:focus {
   outline: 0;
 }
+

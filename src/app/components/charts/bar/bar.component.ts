@@ -47,7 +47,7 @@ export class BarComponent implements OnInit {
     this.chart = new Chart("barChart", {
       type: 'line',
       data: {//values on X-axis
-        labels: this.dateLabels,//.reverse()
+        labels: this.dateLabels.reverse(),
         datasets: [
           {//first column
             label: "High",

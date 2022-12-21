@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarouselComponent } from './carousel.component';
+import { TypeChangeComponent } from './type-change.component';
 
-describe('CarouselComponent', () => {
-  let component: CarouselComponent;
-  let fixture: ComponentFixture<CarouselComponent>;
+describe('TypeChangeComponent', () => {
+  let component: TypeChangeComponent;
+  let fixture: ComponentFixture<TypeChangeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CarouselComponent ]
+      declarations: [ TypeChangeComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CarouselComponent);
+    fixture = TestBed.createComponent(TypeChangeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

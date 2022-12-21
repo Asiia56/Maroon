@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BarWithSearchComponent } from './bar-with-search.component';
+import { AddOptionsBarComponent } from './add-options-bar.component';
 
-describe('BarWithSearchComponent', () => {
-  let component: BarWithSearchComponent;
-  let fixture: ComponentFixture<BarWithSearchComponent>;
+describe('AddOptionsBarComponent', () => {
+  let component: AddOptionsBarComponent;
+  let fixture: ComponentFixture<AddOptionsBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BarWithSearchComponent ]
+      declarations: [ AddOptionsBarComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BarWithSearchComponent);
+    fixture = TestBed.createComponent(AddOptionsBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

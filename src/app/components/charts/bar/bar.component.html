@@ -1,34 +1,29 @@
 <section class="card">
   <div class="card__wrapper">
-    <div class="">
-      <app-apex-bar></app-apex-bar>
+    <app-apex-bar></app-apex-bar>
+    <div class="card__image-wrapper">
+      <canvas id="barChart">{{chart}}</canvas>
     </div>
-    <!--
-       <div class="card__image-wrapper">
-       <canvas id="barChart">{{chart}}</canvas>
-      </div>
-    -->
+
     <div class="card__content">
 
       <div class="card__text">
-        <h1 class="card__content-title">Alpha Vantage</h1>
-        <p>Major provider of historical and real-time stock APIs along with cryptocurrency, Forex, ETF, mutual funds
-          data feeds</p>
-        <p>Each free API key allows up to 500 API calls per day by default. </p>
+        <h1 class="card__content-title">Comparison of prices</h1>
+        <p>On this page you can compare high price of the day with low price on respective day.</p>
+        <p>There is several timeframes, which can be used</p>
       </div>
 
       <div class="card__accordion accordion">
         <div class="card__accordion-head">
-          <h2 class="card__accordion-title">How to use</h2>
+          <h2 class="card__accordion-title">Comparison of libraries</h2>
           <button class="card__accordion-toggler accordion__toggler" type="button" aria-label="Open"><span
               class="accordion__toggler-icon"></span></button>
         </div>
         <div class="card__accordion-content accordion__content">
           <p class="card__accordion-text accordion__inner">
-            API calls are made using any web-enabled client (e.g. a web browser) to make an HTTP GET request to an
-            appropriate URL. API users can use the programming language of their choice
-            Alpha Vantage is backed by Y Combinator, focuses on data access democratizing, and is product-oriented and a
-            technology-driven company
+            Above is bar chart, build with ApexChart.js
+            Below is a bar chart, build with Chatrs.js library
+            Data used for both charts is identical
           </p>
         </div>
       </div>

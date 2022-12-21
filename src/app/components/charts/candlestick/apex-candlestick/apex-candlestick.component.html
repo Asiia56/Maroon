@@ -1,17 +1,27 @@
 <section class="card">
   <div class="card__wrapper">
     <div class="card__image-wrapper">
-      <div id="apexChart" *ngIf="fileOnLoad" class="wrapper">
-        <apx-chart
-        [chart]="chartOptions.chart"
-        [xaxis]="chartOptions.xaxis"
-        [yaxis]="chartOptions.yaxis"
-        [title]="chartOptions.title"
-        [series]="chartOptions.series"></apx-chart>
-     </div>
+      <div class="form-group row" id="timeframeCandle">
+        <label class="col-sm-6 col-form-label" for="timeframeCandle">Timeframe:</label>
+        <div class="col-sm-6">
+          <select (change)="onTimeChange($event.target['value'])" class="form-control form-control-sm"
+            name="timeframeCandle">
+            <option id="{{timeframes[timeframe.id].id}}" value="{{timeframes[timeframe.id].timeframe}}"
+              selected="{{timeframes[timeframe.id].selected}}" *ngFor="let timeframe of timeframes">
+              {{timeframes[timeframe.id].label}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div *ngIf="fileOnLoad" class="wrapper">
+        <apx-chart id="apexChart" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis" [yaxis]="chartOptions.yaxis"
+          [title]="chartOptions.title" [series]="chartOptions.series"></apx-chart>
+      </div>
 
     </div>
-    <div class="card__content">
+
+    <!--
+       <div class="card__content">
 
       <div class="card__text">
         <h1 class="card__content-title">ApexCharts</h1>
@@ -36,5 +46,7 @@
       </div>
 
     </div>
+     -->
+
   </div>
 </section>

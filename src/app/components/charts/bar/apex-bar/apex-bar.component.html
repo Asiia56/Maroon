@@ -1,43 +1,13 @@
-<section class="card">
-  <div class="card__wrapper">
-    <div class="">
-      <button (click)="updateOptions( '1m' )" [class.active]="activeOptionButton=='1m'"> 1M</button>
-      <button (click)="updateOptions( '6m' )" [class.active]="activeOptionButton=='6m'"> 6M</button>
-      <button (click)="updateOptions( '1y' )" [class.active]="activeOptionButton=='1y'"> 1Y</button>
-      <button (click)="updateOptions( 'all' )" [class.active]="activeOptionButton=='all'"> All</button>
+ <!--
+   <button (click)="updateOptions( '1m' )" [class.active]="activeOptionButton=='1m'"> 1M</button>
+  <button (click)="updateOptions( '6m' )" [class.active]="activeOptionButton=='6m'"> 6M</button>
+  <button (click)="updateOptions( '1y' )" [class.active]="activeOptionButton=='1y'"> 1Y</button>
+  <button (click)="updateOptions( 'all' )" [class.active]="activeOptionButton=='all'"> All</button>
+ -->
 
-      <div *ngIf="fileOnLoad">
-        <apx-chart #areaChart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
-          [stroke]="chartOptions.stroke" [dataLabels]="chartOptions.dataLabels" [yaxis]="chartOptions.yaxis"
-          [labels]="chartOptions.labels" [title]="chartOptions.title"></apx-chart>
-      </div>
-    </div>
-
-    <div class="card__content">
-
-      <div class="card__text">
-        <h1 class="card__content-title">Alpha Vantage</h1>
-        <p>Major provider of historical and real-time stock APIs along with cryptocurrency, Forex, ETF, mutual funds
-          data feeds</p>
-        <p>Each free API key allows up to 500 API calls per day by default. </p>
-      </div>
-
-      <div class="card__accordion accordion">
-        <div class="card__accordion-head">
-          <h2 class="card__accordion-title">How to use</h2>
-          <button class="card__accordion-toggler accordion__toggler" type="button" aria-label="Open"><span
-              class="accordion__toggler-icon"></span></button>
-        </div>
-        <div class="card__accordion-content accordion__content">
-          <p class="card__accordion-text accordion__inner">
-            API calls are made using any web-enabled client (e.g. a web browser) to make an HTTP GET request to an
-            appropriate URL. API users can use the programming language of their choice
-            Alpha Vantage is backed by Y Combinator, focuses on data access democratizing, and is product-oriented and a
-            technology-driven company
-          </p>
-        </div>
-      </div>
-
-    </div>
+  <div *ngIf="fileOnLoad">
+    <apx-chart #areaChart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+      [stroke]="chartOptions.stroke" [dataLabels]="chartOptions.dataLabels" [yaxis]="chartOptions.yaxis"
+      [labels]="chartOptions.labels" [title]="chartOptions.title"></apx-chart>
   </div>
-</section>
+
